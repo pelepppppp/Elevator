@@ -26,7 +26,6 @@ public class FloorD extends javax.swing.JFrame {
         initComponents();
     }
         private void sendData(String message) {
-        System.out.println(message);
         try {
             try {
                 output.writeObject(message);
@@ -140,9 +139,7 @@ public class FloorD extends javax.swing.JFrame {
     public void sendMessage(String mssg) {
         System.out.println(mssg);
         if ("2nd Floor".equals(mssg)){
-            sendData(mssg);
             floordisplayer.setText("2nd Floor");
-            System.out.println("sud dre");
         }else if("3rd Floor".equals(mssg)){
             sendData(mssg);
             floordisplayer.setText("3rd Floor");
@@ -213,10 +210,10 @@ public class FloorD extends javax.swing.JFrame {
                     Logger.getLogger(FloorD.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 
-                if("Ground Floor".equals(read)){
-//                    floordisplayer.setText("Ground Floor");
-                    System.out.println("ge pasa sa server: sud sad tawns ground floor oyyyyyy!");
-                }
+//                if("Ground Floor".equals(read)){
+////                    floordisplayer.setText("Ground Floor");
+//                    System.out.println("ge pasa sa server: sud sad tawns ground floor oyyyyyy!");
+//                }
             }
         } catch (IOException ex) {
             Logger.getLogger(FloorD.class.getName()).log(Level.SEVERE, null, ex);

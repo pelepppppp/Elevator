@@ -5,46 +5,25 @@
  */
 package elevatorsimulation;
 
-//import java.io.IOException;
-//import java.io.ObjectInputStream;
-//import java.io.ObjectOutputStream;
-//import java.net.Socket;
-//import java.util.logging.Level;
-//import java.util.logging.Logger;
+
 
 /**
  *
  * @author 2ndyrGroupB
  */
 public class Elevator extends javax.swing.JFrame {
-//    static Socket client;
-//    static ObjectOutputStream output;
-//    static ObjectInputStream input;
-//    static String message =" ";
-    /**
-     * Creates new form FloorA
-     */
+        FloorA fa = new FloorA();
+        FloorB fb = new FloorB();
+        FloorC fc = new FloorC();
+        FloorD fd = new FloorD();
+        FloorE fe = new FloorE();
+        FloorF ff = new FloorF();
+        RequestArray my = new RequestArray(20);
+   
     public Elevator() {
         initComponents();
     }
-//    private void sendData(String message) {
-//        System.out.println(message);
-//        try {
-//            try {
-//                output.writeObject(message);
-//                output.flush();
-//            } catch (NullPointerException e) {
-//                System.out.println(e.getMessage());
-//            }
-//        } catch (IOException ex) {
-//            Logger.getLogger(Elevator.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//
-//    }
-//    public String getMessage(String message){
-//        System.out.println("");
-//        return message;
-//    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -62,6 +41,7 @@ public class Elevator extends javax.swing.JFrame {
         btnthird = new javax.swing.JButton();
         btnfifth = new javax.swing.JButton();
         btnsixth = new javax.swing.JButton();
+        indicator = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Floor Control");
@@ -166,19 +146,30 @@ public class Elevator extends javax.swing.JFrame {
                 .addGap(20, 20, 20))
         );
 
+        indicator.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        indicator.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        indicator.setText("Floor Indicator");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addComponent(indicator, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(59, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(80, 80, 80)
+                .addGap(31, 31, 31)
+                .addComponent(indicator, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(74, Short.MAX_VALUE))
         );
@@ -199,50 +190,97 @@ public class Elevator extends javax.swing.JFrame {
 
     private void btnsecondActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsecondActionPerformed
         // TODO add your handling code here:
-        FloorA fa = new FloorA();
+        
+        fb.sendMessage("2nd Floor");
         fa.sendMessage("2nd Floor");
-        this.dispose();
+        fc.sendMessage("2nd Floor");
+        fd.sendMessage("2nd Floor");
+        fe.sendMessage("2nd Floor");
+        ff.sendMessage("2nd Floor");
+        indicator.setText("2nd Floor");
+        my.addMessage("2nd Floor");
+//        this.dispose();
 //        sendData("2nd Floor");    
     }//GEN-LAST:event_btnsecondActionPerformed
 
     private void btnfourthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnfourthActionPerformed
         // TODO add your handling code here:
-        FloorA fa = new FloorA();
+//        FloorA fa = new FloorA();
+//        FloorB fb = new FloorB();
+        fb.sendMessage("4th Floor");
         fa.sendMessage("4th Floor");
-        this.dispose();
+        fc.sendMessage("4th Floor");
+        fd.sendMessage("4th Floor");
+        fe.sendMessage("4th Floor");
+        ff.sendMessage("4th Floor");
+        indicator.setText("4th Floor");
+        my.addMessage("4th Floor");
+//        this.dispose();
 //        sendData("4th Floor");
     }//GEN-LAST:event_btnfourthActionPerformed
 
     private void btnthirdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnthirdActionPerformed
         // TODO add your handling code here:
-        FloorA fa = new FloorA();
+//        FloorA fa = new FloorA();
+//        FloorB fb = new FloorB();
+        fb.sendMessage("3rd Floor");
         fa.sendMessage("3rd Floor");
-        this.dispose();
+        fc.sendMessage("3rd Floor");
+        fd.sendMessage("3rd Floor");
+        fe.sendMessage("3rd Floor");
+        ff.sendMessage("3rd Floor");
+        indicator.setText("3rd Floor");
+        my.addMessage("3rd Floor");
+        
 //        sendData("3rd Floor");
     }//GEN-LAST:event_btnthirdActionPerformed
 
     private void btnfifthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnfifthActionPerformed
         // TODO add your handling code here:
-        FloorA fa = new FloorA();
+//        FloorA fa = new FloorA();
+//        FloorB fb = new FloorB();
+        fb.sendMessage("5th Floor");
         fa.sendMessage("5th Floor");
-        this.dispose();
+        fc.sendMessage("5th Floor");
+        fd.sendMessage("5th Floor");
+        fe.sendMessage("5th Floor");
+        ff.sendMessage("5th Floor");
+        indicator.setText("5th Floor");
+        my.addMessage("5th Floor");
+//        this.dispose();
 //        sendData("5th Floor");
     }//GEN-LAST:event_btnfifthActionPerformed
 
     private void btnsixthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsixthActionPerformed
         // TODO add your handling code here:
-        FloorA fa = new FloorA();
+//        FloorA fa = new FloorA();
+//        FloorB fb = new FloorB();
+        fb.sendMessage("6th Floor");
         fa.sendMessage("6th Floor");
-        this.dispose();
+        fc.sendMessage("6th Floor");
+        fd.sendMessage("6th Floor");
+        fe.sendMessage("6th Floor");
+        ff.sendMessage("6th Floor");
+        indicator.setText("6th Floor");
+        my.addMessage("6th Floor");
+//        this.dispose();
 //        message ="6th Floor";
 //        sendData(message);
     }//GEN-LAST:event_btnsixthActionPerformed
 
     private void btngfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngfActionPerformed
         // TODO add your handling code here:
-        FloorA fa = new FloorA();
+//        FloorA fa = new FloorA();
+//        FloorB fb = new FloorB();
+        fb.sendMessage("Ground Floor");
         fa.sendMessage("Ground Floor");
-        this.dispose();
+        fc.sendMessage("Ground Floor");
+        fd.sendMessage("Ground Floor");
+        fe.sendMessage("Ground Floor");
+        ff.sendMessage("Ground Floor");
+        indicator.setText("Ground Floor");
+        my.addMessage("Ground Floor");
+//        this.dispose();
 //        sendData("Ground Floor");
     }//GEN-LAST:event_btngfActionPerformed
 
@@ -280,30 +318,7 @@ public class Elevator extends javax.swing.JFrame {
                 new Elevator().setVisible(true);
             }
         });
-//        try {
-//            client = new Socket("127.0.0.1", 12345);
-//            output = new ObjectOutputStream(client.getOutputStream());
-//            input = new ObjectInputStream(client.getInputStream());
-//            
-//            String read = "";
-//
-//            while (!"exit".equals(read)) {
-//                try {
-//                    read= (String)input.readObject();
-//                    System.out.println("message from server: " + read);
-//                } catch (ClassNotFoundException ex) {
-//                    Logger.getLogger(Elevator.class.getName()).log(Level.SEVERE, null, ex);
-//                }
-//                
-//                if ("ground floor".equals(read)){
-//                    System.out.println("from server: ground floor");
-//                    displayer.setText("Ground Floor");
-//                }
-//            }
-//            
-//        } catch (IOException ex) {
-//            Logger.getLogger(Elevator.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -313,6 +328,7 @@ public class Elevator extends javax.swing.JFrame {
     static javax.swing.JButton btnsecond;
     static javax.swing.JButton btnsixth;
     static javax.swing.JButton btnthird;
+    static javax.swing.JLabel indicator;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables

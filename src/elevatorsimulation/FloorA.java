@@ -121,6 +121,7 @@ public class FloorA extends javax.swing.JFrame {
 
     private void btnUPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUPActionPerformed
         // TODO add your handling code here:
+        this.dispose();
         Elevator e = new Elevator();
         e.show();
         e.setLocationRelativeTo(null);

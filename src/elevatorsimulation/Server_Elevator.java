@@ -24,6 +24,7 @@ public class Server_Elevator extends javax.swing.JFrame {
     static ObjectInputStream input;
     static String message=" ";
     FloorA fa = new FloorA();
+//    RequestArray my = new RequestArray(20);
     
     /**
      * Creates new form Server_Elevator
@@ -32,7 +33,6 @@ public class Server_Elevator extends javax.swing.JFrame {
         initComponents();
     }
     private static void sentData(String message) {
-        System.out.println(message);
         try {
             try {
                 output.writeObject(message);
@@ -84,14 +84,14 @@ public class Server_Elevator extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(87, 87, 87))
+                .addGap(85, 85, 85))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(30, 30, 30)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 169, Short.MAX_VALUE)
                 .addComponent(displayer, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(128, 128, 128))
         );
@@ -163,7 +163,6 @@ public class Server_Elevator extends javax.swing.JFrame {
                     System.out.println("request: ground floor");
                     displayer.setText("Ground Floor");
                     sentData(read);
-//                    passDisplayer(read);
                 }if("2nd Floor".equals(read)){
                     System.out.println("request: 2nd floor");
                     displayer.setText("2nd Floor");
